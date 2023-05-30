@@ -17,15 +17,18 @@ def too_sixteen(num: int) -> str:
     while number >= 15:
         remainder = number % SYSTEM_NUMB_1
         if DICTIONARY.get(remainder):
+            out += DICTIONARY.get(remainder)
+        else:
             out += str(remainder)
-        out += str(remainder)
-        number //= 16
+        number //= SYSTEM_NUMB_1
     if DICTIONARY.get(number):
-        out += str(number)
+        out += DICTIONARY.get(number)
     else:
         out += str(number)
+
     return out[::-1]
 
 
 numb = int(input("Введите число: "))
 print(too_sixteen(numb))
+print(hex(numb))
