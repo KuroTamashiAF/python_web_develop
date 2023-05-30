@@ -21,3 +21,4 @@ while number_attempts > 0:
         break
 else:
     print("Попытки исчерпаны. Вы проиграли!")
+
