@@ -3,18 +3,21 @@
 Для проверки своего кода используйте модуль fractions."""
 
 import fractions
+import math
 
 
-def product_of_fractions(str1: str, str2: str):
+def product_of_fractions(str1: str, str2: str) ->str:
     list_number = str1.split('/')
     a1 = int(list_number[0])
     b1 = int(list_number[1])
     list_number = str2.split('/')
     a2 = int(list_number[0])
-    b2 = int(list_number[0])
+    b2 = int(list_number[1])
     numerator = (a1*a2)
     denominator = (b1*b2)
-    return numerator / denominator
+    gcd = math.gcd(numerator,denominator)
+
+    return f"{numerator//gcd}/{denominator//gcd}"
 
 
 
