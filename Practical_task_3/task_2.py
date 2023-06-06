@@ -8,7 +8,7 @@
 def ten_popular_words(text: str):
     dict1 = {}
     sorted_dict = {}
-    delete = ".,!?;:-[]{}()="
+    delete = ".,!?;:-[]{}()=—"
     for i in delete:
         text = text.replace(i, "")
     text = text.lower()
