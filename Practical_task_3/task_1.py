@@ -4,13 +4,14 @@
 """
 
 
-def remove_repetitions(lis: list) -> list:
+def remove_repetitions(lis: list):
     result = []
     for i in lis:
-        if i not in result:
+        if lis.count(i) > 1 and i not in result:
             result.append(i)
     return result
 
 
 work_list = [1, 59, 46, 78, 1, 78, 59, 1]
+print(work_list)
 print(remove_repetitions(work_list))
