@@ -11,13 +11,19 @@ def ferz() -> bool:
     n = 8
     x = []
     y = []
-    print("Введите кординаты x и y через пробел, в конце нажмите Enter")
+    print("Введите кординаты x и y через пробел, в конце каждой пары нажмите Enter")
     for i in range(n):
         new_x, new_y = [int(s) for s in input().split()]
         x.append(new_x)
         y.append(new_y)
 
     flag = True
-    
+
+    for i in range(n):
+        for j in range(i + 1, n):
+            if x[i] == x[j] or y[i] == y[j] or abs(x[i] - x[j]) == abs(y[i] - y[j]):
+                flag = False
+    return flag
+
 
 ferz()
